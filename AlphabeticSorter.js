@@ -13,12 +13,17 @@ function sortAlphabetically(string){
         }
         return [char, false]
     })
+    console.log(charArr);
     charArr.sort((a,b) =>{
-        a[0] - b[0]
+        return a[0] - b[0]
     })
-    charArr.map(char =>{
-        char[0] > 96 ? String.fromCharCode(char[0]+32) : String.fromCharCode(char[0]);
-    })
+    console.log(charArr)
+    return charArr.map(char =>{
+        return char[1] ? 
+        String.fromCharCode(char[0]+32) 
+        : String.fromCharCode(char[0]);
+    }).join('')
 }
 
-console.log(sortAlphabetically('cbazx'));
+
+console.log(sortAlphabetically('cbazZx'));
