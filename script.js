@@ -1,9 +1,7 @@
-/** 
-*@param {string} string
-*/
+//This code augments the sorter function directly into the String object for greater ease
 
-function sortAlphabetically(string){
-    let strArr = string.split('');
+String.prototype.noCaseSort = function(){
+    let strArr = this.split('');
     return strArr.map(char=>{
         return char.charCodeAt(0);
     })
@@ -22,6 +20,3 @@ function sortAlphabetically(string){
         : String.fromCharCode(char[0]);
     }).join('')
 }
-
-console.log(sortAlphabetically('ZxyAbc'));
-//Outputs AbcxyZ
