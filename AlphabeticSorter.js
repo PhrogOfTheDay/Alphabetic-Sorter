@@ -1,10 +1,5 @@
-/** 
-*@param {string} string
-*/
-
-function sortAlphabetically(string){
-    let strArr = string.split('');
-    return strArr.map(char=>{
+function sortAlphabetically(array){
+    return array.map(char=>{
         return char.charCodeAt(0);
     })
     .map(char =>{
@@ -20,8 +15,8 @@ function sortAlphabetically(string){
         return char[1] ? 
         String.fromCharCode(char[0]+32) 
         : String.fromCharCode(char[0]);
-    }).join('')
+    })
 }
 
-console.log(sortAlphabetically('ZxyAbc'));
-//Outputs AbcxyZ
+console.log(sortAlphabetically(['Z', 'x', 'y', 'A', 'b', 'c']));
+//Outputs [ 'A', 'b', 'c', 'x', 'y', 'Z' ]

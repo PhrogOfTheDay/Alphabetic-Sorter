@@ -1,8 +1,7 @@
-//This code augments the sorter function directly into the String object for greater ease
+//This code augments the sorter function directly into the Array object for greater ease
 
-String.prototype.noCaseSort = function(){
-    let strArr = this.split('');
-    return strArr.map(char=>{
+Array.prototype.noCaseSort = function(){
+    return this.map(char=>{
         return char.charCodeAt(0);
     })
     .map(char =>{
@@ -18,5 +17,7 @@ String.prototype.noCaseSort = function(){
         return char[1] ? 
         String.fromCharCode(char[0]+32) 
         : String.fromCharCode(char[0]);
-    }).join('')
+    })
 }
+
+console.log(['A','a','b','D','Y','Z'].noCaseSort())
